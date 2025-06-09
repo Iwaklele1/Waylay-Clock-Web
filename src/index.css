@@ -1,0 +1,529 @@
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+
+/* ========================================================== */
+/* Navbar styling */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-bg);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  z-index: 1000;
+}
+
+.navbar-inner {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: var(--color-secondary);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+
+
+/* ========================================================== */
+/* Theme Toggle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.9rem;
+  user-select: none;
+  transition: color var(--transition-speed);
+}
+
+.theme-toggle:hover {
+  color: var(--color-accent);
+}
+
+.theme-toggle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  appearance: none;
+  background-color: var(--checkbox-bg);
+  border: 2px solid var(--checkbox-border);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.theme-toggle input[type="checkbox"]:checked {
+  background-color: var(--checkbox-checkmark);
+  border-color: var(--checkbox-checkmark);
+}
+
+.theme-toggle input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  width: 4px;
+  height: 9px;
+  border: solid var(--checkbox-bg);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+
+
+/* ========================================================== */
+/* Current Time Page */
+.current-time-page .time-display {
+  font-size: 4rem;
+  font-weight: 700;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+  text-shadow: var(--time-display-shadow);
+  transition: color 0.4s, text-shadow 0.4s;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.select {
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-secondary);
+  background-color: var(--color-card-bg);
+  color: var(--color-primary);
+  min-width: 240px;
+  transition: all 0.3s ease;
+}
+
+body.dark .select {
+  background-color: var(--color-card-bg);
+  border-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+
+.select:focus,
+.select:hover {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+
+
+/* ========================================================== */
+/* Alarm Page */
+.alarm-presets {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.alarm-presets button {
+  background: transparent;
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.alarm-presets button:hover,
+.alarm-presets button:focus {
+  background-color: var(--color-accent);
+  color: #222;
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.alarm-form {
+  max-width: 360px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.alarm-form label {
+  font-weight: 600;
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.alarm-form input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--checkbox-border);
+  background-color: var(--checkbox-bg);
+  color: var(--color-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.alarm-form select {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--checkbox-border);
+  background-color: var(--checkbox-bg);
+  color: var(--color-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.alarm-form input:focus,
+.alarm-form select:focus {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.alarm-form button[type="submit"] {
+  background-color: var(--color-accent);
+  color: #222;
+  font-weight: 700;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.alarm-form button[type="submit"]:hover {
+  background-color: var(--color-accent-hover);
+}
+
+body.light .alarm-form button[type="submit"] {
+  color: #fff;
+}
+
+
+
+/* ========================================================== */
+/* Stopwatch Page */
+.stopwatch-presets {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.stopwatch-presets button {
+  background: transparent;
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.stopwatch-presets button:hover,
+.stopwatch-presets button:focus {
+  background-color: var(--color-accent);
+  color: #222;
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.timer-display,
+.time-display {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+  text-shadow: var(--time-display-shadow);
+  transition: color 0.4s, text-shadow 0.4s;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.controls button {
+  background-color: var(--color-accent);
+  color: #222;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.controls button:hover,
+.controls button:focus {
+  background-color: var(--color-accent-hover);
+  outline: none;
+}
+
+.controls button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+body.light .controls button {
+  color: #fff;
+}
+
+
+
+/* ========================================================== */
+/* Timer Page */
+.timer-presets {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.timer-presets button {
+  background: transparent;
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.timer-presets button:hover,
+.timer-presets button:focus {
+  background-color: var(--color-accent);
+  color: #222;
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.manual-inputs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.manual-inputs label {
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.manual-inputs input {
+  padding: 0.4rem 0.75rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--checkbox-border);
+  background-color: var(--checkbox-bg);
+  color: var(--color-primary);
+  width: 5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light .manual-inputs input {
+  background: var(--checkbox-bg);
+  border-color: var(--checkbox-border);
+}
+
+.manual-inputs input:focus {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.timer-display {
+  font-size: 4rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+  text-shadow: var(--time-display-shadow);
+  transition: color 0.4s, text-shadow 0.4s;
+}
+
+.manual-inputs input::-webkit-inner-spin-button,
+.manual-inputs input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+
+/* ========================================================== */
+/* 📱 Responsive Layout for Tablet/Mobile */
+/* ========================================================== */
+@media (max-width: 1024px) {
+  .navbar-inner {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .theme-toggle {
+    align-self: flex-end;
+  }
+
+  .main-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .timer-display,
+  .time-display {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-inner {
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .theme-toggle {
+    align-self: center;
+  }
+
+  .alarm-form,
+  .manual-inputs {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .manual-inputs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stopwatch-presets,
+  .timer-presets,
+  .alarm-presets {
+    justify-content: center;
+  }
+
+  .select {
+    width: 100%;
+  }
+
+  .page {
+    padding: 1.5rem 1rem;
+  }
+
+  .page-title {
+    font-size: 2.25rem;
+  }
+
+  .timer-display,
+  .time-display {
+    font-size: 2.25rem;
+  }
+
+  .controls button {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .alarm-form {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .alarm-form input,
+  .alarm-form select {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .alarm-form button[type="submit"] {
+    width: 100%;
+    max-width: 240px;
+  }
+}
